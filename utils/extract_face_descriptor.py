@@ -11,3 +11,5 @@ def extract_face_descriptor(image):
         return None
 
     return face_encodings[0]  
+
+

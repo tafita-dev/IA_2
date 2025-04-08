@@ -1,8 +1,7 @@
 # Utiliser l'image Python 3.10-slim comme base
 FROM python:3.10-slim
 
-# Mettre à jour les paquets et installer cmake
-RUN apt-get update && apt-get install -y cmake
+
 
 # Définir le répertoire de travail
 WORKDIR /app

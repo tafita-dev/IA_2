@@ -1,19 +1,21 @@
-# Utiliser l'image Python 3.10-slim comme base
+# Utiliser une image Python slim
 FROM python:3.10-slim
 
 
 
-# Définir le répertoire de travail
+# Définir le répertoire de travail à /app
 WORKDIR /app
 
-# Copier le contenu du répertoire local dans le répertoire de travail
+# Copier les fichiers du projet dans l'image Docker
 COPY . /app
 
-# Installer les dépendances Python
-RUN pip install --no-cache-dir -r requirements.txt
+# Installer pip et les dépendances Python
+RUN pip install --upgrade pip
 
-# Exposer le port (si nécessaire)
-EXPOSE 5000
 
-# Commande pour démarrer l'application (ajuste en fonction de ton application)
+# Installer les autres dépendances Python
+RUN pip install -r requirements.txt
+
+
+# Lancer l'application
 CMD ["python", "app.py"]
